@@ -11,7 +11,7 @@ function App() {
 
   const getUsers = async () => {
     try {
-      const res = await axios.get("/person");
+      const res = await axios.get("https://backend-impla.onrender.com/api/person");
       setList(res.data);
       console.log(res.data); 
     } catch (error) {
@@ -21,7 +21,7 @@ function App() {
 
   const registerUser = async () => {
     try { 
-      await axios.post("/person",{
+      await axios.post("https://backend-impla.onrender.com/api/person",{
         name, lastname, salary
       });
     } catch (error) {
@@ -31,7 +31,7 @@ function App() {
 
   const deleteUser = async (id) => {
     try { 
-      await axios.delete(`/person/${id}`);
+      await axios.delete(`https://backend-impla.onrender.com/api/person/${id}`);
       getUsers()
     } catch (error) {
       console.error("Erro ao inserir", error);
